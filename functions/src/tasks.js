@@ -10,11 +10,17 @@ export async function getTasks(req, res) {
         task.id = doc.id;
         return task;
     }); 
-    res.send('TASKS');
+    res.send(tasks);
 }
 
 export function createTask(req, res) {
     const newTask = req.body;
+    if (!newTask || !newTask) {
+        res.status(400).send({ succes: false, message: 'Invalid request' });
+        return;
+    }
+const db = dbConnect();
+
     res.status(201).send('Task Added');
 }
 
