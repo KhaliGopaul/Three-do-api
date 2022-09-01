@@ -5,12 +5,12 @@ import { getTasks, createTask, updateTask, deleteTask } from './src/tasks.js';
 
 const app = express();
 app.use(cors());
-app.use(exporess.json());
+app.use(express.json());
 
 app.get('/tasks', getTasks);
 app.post('/tasks', createTask);
 app.patch('./tasks/:taskId', updateTask);
-app.delete('/takss/:taskId', deleteTask);
+app.delete('/tasks/:taskId', deleteTask);
 
 
 
